@@ -1,4 +1,4 @@
-﻿namespace Alsoft.Tweenst
+namespace Alsoft.Tweenst
 {
     /// <summary>Tweens controller interface</summary>
     public interface ITweener

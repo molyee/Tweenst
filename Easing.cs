@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EasyFunc = System.Func<float, float>;
 
 namespace Alsoft.Tweenst
