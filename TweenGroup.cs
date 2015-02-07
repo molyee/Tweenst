@@ -4,9 +4,8 @@ using System.Collections.Generic;
 namespace Alsoft.Tweest
 {
     /// <summary>
-    /// Tween controllers group for managing all tween controllers
-    /// in one hand. You can use this class as global tween manager
-    /// or as local tween controllers container
+    /// Tween group combines tweens or tween groups in one container. It makes easy
+    /// to run and stop multiple tweens in one time
     /// </summary>
     public class TweenGroup : ITween
     {

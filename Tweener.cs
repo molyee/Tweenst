@@ -5,12 +5,15 @@ using System.Diagnostics;
 namespace Alsoft.Tweest
 {
     /// <summary>
-    /// Simple tweens controller
+    /// Simple tweens controller for managing all tweens in one hand.
+    /// You can use this class as global tween manager or as local tweens
+    /// controller.
     /// </summary>
     public class Tweener : ITweener
     {
         /// <summary>
-        /// Tween speed multiplier
+        /// Tween speed multiplier. Changing this property immediately speeds
+        /// up or down all running tweens that managed by tweener
         /// </summary>
         public float TimeSpeedMultiplier { get; set; }
 
