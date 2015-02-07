@@ -1,0 +1,9 @@
+obj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+*.csproj
+*.opensdf
+*.sdf
+*.sln
+*.suo
