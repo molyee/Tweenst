@@ -1,7 +1,7 @@
 using System;
 using EasyFunc = System.Func<float, float>;
 
-namespace Alsoft.Tweenst
+namespace Alsoft.Tweest
 {
     /// <summary>
     /// // TODO default tweens configuration (to remove or change)

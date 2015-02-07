@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Alsoft.Tweenst
+namespace Alsoft.Tweest
 {
     /// <summary>
     /// Tween controllers group for managing all tween controllers

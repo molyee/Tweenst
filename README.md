@@ -1,4 +1,4 @@
-# Tweenst
+# Tweest
 Lightweight tweener for C# developers
 
-!!!WORK IN PROGRESS!!!
+WORK IN PROGRESS

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Alsoft.Tweenst
+namespace Alsoft.Tweest
 {
     /// <summary>Simple tweens controller</summary>
     public class Tweener : ITweener

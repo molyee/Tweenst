@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 #endif
 
-namespace Alsoft.Tweenst
+namespace Alsoft.Tweest
 {
     /// <summary>Interface for using custom interpolate functions</summary>
     public interface IInterpolantManager

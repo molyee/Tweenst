@@ -1,6 +1,6 @@
 using System;
 
-namespace Alsoft.Tweenst
+namespace Alsoft.Tweest
 {
     /// <summary>Tween interface</summary>
     public interface ITween : IDisposable
