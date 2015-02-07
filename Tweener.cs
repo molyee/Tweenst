@@ -4,17 +4,23 @@ using System.Diagnostics;
 
 namespace Alsoft.Tweest
 {
-    /// <summary>Simple tweens controller</summary>
+    /// <summary>
+    /// Simple tweens controller
+    /// </summary>
     public class Tweener : ITweener
     {
-        /// <summary>Tween speed multiplier</summary>
+        /// <summary>
+        /// Tween speed multiplier
+        /// </summary>
         public float TimeSpeedMultiplier { get; set; }
 
-        private readonly Dictionary<ITween, object> _tweens;
-        private readonly Stopwatch _timer;
-        private double _lastElapsedMsec;
+        readonly Dictionary<ITween, object> _tweens;
+        readonly Stopwatch _timer;
+        double _lastElapsedMsec;
 
-        /// <summary>Tweens controller constructor</summary>
+        /// <summary>
+        /// Tweens controller constructor
+        /// </summary>
         /// <param name="timeSpeedMultiplier">Animation playback rate</param>
         public Tweener(float timeSpeedMultiplier = 1f)
         {
@@ -23,7 +29,9 @@ namespace Alsoft.Tweest
             TimeSpeedMultiplier = timeSpeedMultiplier;
         }
 
-        /// <summary>Add new tween</summary>
+        /// <summary>
+        /// Add new tween
+        /// </summary>
         /// <param name="tween">Tween</param>
         /// <param name="locker">Tween locker (owner)</param>
         public void Add(ITween tween, object locker = null)
@@ -35,7 +43,9 @@ namespace Alsoft.Tweest
             _tweens.Add(tween, locker);
         }
 
-        /// <summary>Remove and dispose tween (with locker checking)</summary>
+        /// <summary>
+        /// Remove and dispose tween (with locker checking)
+        /// </summary>
         /// <param name="tween">Tween to remove</param>
         /// <param name="locker">Tween locker (owner)</param>
         public void Remove(ITween tween, object locker = null)
@@ -50,7 +60,9 @@ namespace Alsoft.Tweest
             Delete(tween);
         }
 
-        /// <summary>Remove from list and dispose tween</summary>
+        /// <summary>
+        /// Remove from list and dispose tween
+        /// </summary>
         /// <param name="tween">Tween to remove</param>
         protected void Delete(ITween tween)
         {
@@ -68,7 +80,9 @@ namespace Alsoft.Tweest
             EachTween(Delete, (tween, locker) => locker == lockedBy);
         }
 
-        /// <summary>Remove and dispose all tweens</summary>
+        /// <summary>
+        /// Remove and dispose all tweens
+        /// </summary>
         public void RemoveAll()
         {
             EachTween(Delete);
@@ -88,7 +102,9 @@ namespace Alsoft.Tweest
                 call(tween);
         }
 
-        /// <summary>Select all managed tweens</summary>
+        /// <summary>
+        /// Select all managed tweens
+        /// </summary>
         /// <returns>List of tweens</returns>
         public IList<ITween> GetTweens()
         {
@@ -98,7 +114,9 @@ namespace Alsoft.Tweest
             return list;
         }
 
-        /// <summary>Select suitable tweens</summary>
+        /// <summary>
+        /// Select suitable tweens
+        /// </summary>
         /// <param name="predicate">Check tween is suitable</param>
         /// <returns>List of tweens</returns>
         public IList<ITween> GetTweens(Func<ITween, bool> predicate)
@@ -113,7 +131,9 @@ namespace Alsoft.Tweest
             return list;
         }
 
-        /// <summary>Select suitable tweens</summary>
+        /// <summary>
+        /// Select suitable tweens
+        /// </summary>
         /// <param name="predicate">Check tween and/or locker is suitable</param>
         /// <returns>List of tweens</returns>
         public IList<ITween> GetTweens(Func<ITween, object, bool> predicate)
@@ -128,16 +148,22 @@ namespace Alsoft.Tweest
             return list;
         }
 
-        /// <summary>Check tween timer is running</summary>
+        /// <summary>
+        /// Check tween timer is running
+        /// </summary>
         public bool IsRunning { get { return _timer.IsRunning; } }
 
-        /// <summary>Start tween timer from begining</summary>
+        /// <summary>
+        /// Start tween timer from begining
+        /// </summary>
         public void Start()
         {
             _timer.Restart();
         }
 
-        /// <summary>Update all tweens with custom frame rate</summary>
+        /// <summary>
+        /// Update all tweens with custom frame rate
+        /// </summary>
         public void Update()
         {
             if (!IsRunning)
@@ -148,13 +174,17 @@ namespace Alsoft.Tweest
             _lastElapsedMsec = elapsed;
         }
 
-        /// <summary>Pause all tweens and save last tween positions</summary>
+        /// <summary>
+        /// Pause all tweens and save last tween positions
+        /// </summary>
         public void Pause()
         {
             if (IsRunning) _timer.Stop();
         }
 
-        /// <summary>Resume tweens after pause</summary>
+        /// <summary>
+        /// Resume tweens after pause
+        /// </summary>
         public void Resume()
         {
             _timer.Start();
@@ -169,7 +199,9 @@ namespace Alsoft.Tweest
             _timer.Reset();
         }
 
-        /// <summary>Stop timer and remove all tweens</summary>
+        /// <summary>
+        /// Stop timer and remove all tweens
+        /// </summary>
         public void Clear()
         {
             Stop();
