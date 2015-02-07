@@ -2,6 +2,7 @@ obj/
 [Bb]in/
 [Dd]ebug*/
 [Rr]elease*/
+[Pp]roperties*/
 *.csproj
 *.opensdf
 *.sdf
